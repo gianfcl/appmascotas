@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMascota"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    card_view:cardCornerRadius="4dp">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:columnCount="4"
+        android:rowCount="2">
+        <ImageView
+            android:id="@+id/imgFot"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:src="@drawable/lollipop"
+            android:scaleType="centerCrop"
+            android:layout_columnSpan="4"/>
+
+
+        <ImageView
+            android:id="@+id/imgBone1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="asd"
+            android:src="@drawable/bone"/>
+        <TextView
+            android:id="@+id/tvNom"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="nombre"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/tvCont"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="0"
+            android:layout_gravity="right|center"/>
+
+        <ImageView
+            android:id="@+id/imgBone2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bone_yellow"/>
+    </GridLayout>
+
+</androidx.cardview.widget.CardView>

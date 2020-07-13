@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Mascotas</string>
+    <string name="texto_boton_click">Click</string>
+    <string name="texto_titulo">Hello World!</string>
+    <string name="mensaje">Favorito :)</string>
+    <string name="texto_accion">Acción</string>
+    <string-array name="planetas">
+        <item>mercurio</item>
+        <item>venus</item>
+        <item>tierra</item>
+        <item>marte</item>
+        <item>jupiter</item>
+    </string-array>
+    <string name="titulo_tarjeta">Android 5.0</string>
+    <string name="descripcion_tarjeta">Esta es la version en la que se incluye material design Android Lollipop</string>
+</resources>
