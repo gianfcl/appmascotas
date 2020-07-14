@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,7 +31,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
+        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
+        View rlstar = miActionBar.findViewById(R.id.rlestrella);
+        rlstar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intento = new Intent(MainActivity.this, Mascotasfavoritos.class);
+                startActivity(intento);
+            }
+        });
         //setSupportActionBar(miActionBar);
 
         listaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
@@ -68,9 +77,12 @@ public class MainActivity extends AppCompatActivity {
     public void LlenarMascotas(){
         mascotas = new ArrayList<Mascota>();
 
-        mascotas.add(new Mascota("Filurais",R.drawable.mascota1,1));
-        mascotas.add(new Mascota("Tom",R.drawable.mascota2,3));
+        mascotas.add(new Mascota("Filurais",R.drawable.loro,4));
+        mascotas.add(new Mascota("Filurais",R.drawable.hamster,1));
+        mascotas.add(new Mascota("Filurais",R.drawable.canario,2));
         mascotas.add(new Mascota("Bunny",R.drawable.mascota3,5));
+        mascotas.add(new Mascota("Filurais",R.drawable.mascota1,2));
+        mascotas.add(new Mascota("Tom",R.drawable.mascota2,3));
     }
 
     public void refrescandoContenido(){

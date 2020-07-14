@@ -14,12 +14,14 @@
         android:src="@drawable/paw_dog"
         android:layout_gravity="start"/>
     <TextView
+        android:id="@+id/nombrebarra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textSize="30dp"/>
 
     <RelativeLayout
+        android:id="@+id/rlestrella"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="end">
@@ -38,11 +40,5 @@
             android:layout_centerInParent="true"
             android:text="5"/>
     </RelativeLayout>
-    <!--TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5"
-        android:background="@drawable/star"
-        android:layout_gravity="end"/-->
 
 </androidx.appcompat.widget.Toolbar>
