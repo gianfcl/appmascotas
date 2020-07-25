@@ -7,38 +7,4 @@
     android:background="@color/colorPrimary"
     android:elevation="4dp">
 
-    <ImageView
-        android:id="@+id/imgHuella"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/paw_dog"
-        android:layout_gravity="start"/>
-    <TextView
-        android:id="@+id/nombrebarra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="30dp"/>
-
-    <RelativeLayout
-        android:id="@+id/rlestrella"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="end">
-        <ImageView
-            android:id="@+id/splash_imageview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/star"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_centerInParent="true"
-            android:text="5"/>
-    </RelativeLayout>
-
 </androidx.appcompat.widget.Toolbar>

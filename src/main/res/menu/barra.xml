@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/estrella"
+        android:icon="@drawable/star"
+        android:menuCategory="container"
+        android:title="Estrella"
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_favorite"
         android:icon="@drawable/star"
-        android:title="Desplegable"
-        app:showAsAction="ifRoom"/>
+        android:title="Contacto"
+        android:orderInCategory="100"/>
 
     <!-- Settings, should always be in the overflow -->
     <item android:id="@+id/action_settings"
-        android:title="Mascotas Favoritas"
-        app:showAsAction="never"/>
+        android:title="Acerca de"
+        android:orderInCategory="101"/>
 
 </menu>

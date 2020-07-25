@@ -9,10 +9,14 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -32,15 +36,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
-        View rlstar = miActionBar.findViewById(R.id.rlestrella);
-        rlstar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intento = new Intent(MainActivity.this, Mascotasfavoritos.class);
-                startActivity(intento);
-            }
-        });
-        //setSupportActionBar(miActionBar);
+        setSupportActionBar(miActionBar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.paw_dog);
+            getSupportActionBar().setTitle(R.string.app_name);
+        }
 
         listaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
         listaMascotas.setHasFixedSize(true);
@@ -51,22 +53,6 @@ public class MainActivity extends AppCompatActivity {
         listaMascotas.setLayoutManager(llm);
         LlenarMascotas();
         iniAdaptador();
-
-        /*agregarFAB();
-
-        sfiMiIndicadorRefresh =  (SwipeRefreshLayout) findViewById(R.id.sfiMiIndicadorRefresh);
-        lstMiLista = (ListView) findViewById(R.id.lstMiLista);
-
-        String[] planetas = getResources().getStringArray(R.array.planetas);
-        lstMiLista.setAdapter(new ArrayAdapter(this,android.R.layout.simple_list_item_1,planetas));
-        sfiMiIndicadorRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                refrescandoContenido();
-            }
-        });
-        */
-
     }
 
     private void iniAdaptador() {
@@ -85,31 +71,24 @@ public class MainActivity extends AppCompatActivity {
         mascotas.add(new Mascota("Tom",R.drawable.mascota2,3));
     }
 
-    public void refrescandoContenido(){
-        /*
-        sfiMiIndicadorRefresh =  (SwipeRefreshLayout) findViewById(R.id.sfiMiIndicadorRefresh);
-        lstMiLista = (ListView) findViewById(R.id.lstMiLista);
-        sfiMiIndicadorRefresh.setRefreshing(false);
-         */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater ();
+        inflater.inflate ( R.menu.barra, menu );
+        return true;
     }
 
-    public void agregarFAB(){
-        /*
-        FloatingActionButton miFAB=(FloatingActionButton) findViewById(R.id.fabMiFAB);
-        miFAB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(v,getResources().getString(R.string.mensaje),Snackbar.LENGTH_LONG)
-                        .setAction(getResources().getString(R.string.texto_accion), new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Log.i("SNACKBAR","Click aquí");
-                            }
-                        })
-                        .setActionTextColor(getResources().getColor(R.color.colorPrimary))
-                        .show();
-            }
-        });
-        */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId ()){
+            case R.id.estrella:
+                //Toast.makeText ( this,"ranquet",Toast.LENGTH_SHORT ).show ();
+                Intent intent = new Intent(this, Mascotasfavoritos.class);
+                this.startActivity(intent);
+                break;
+            default:
+                return super.onOptionsItemSelected ( item );
+        }
+        return true;
     }
 }
