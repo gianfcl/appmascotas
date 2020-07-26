@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pojo.contacto">
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="55dp">
+
+        <TextView
+            android:id="@+id/tvlMensaje"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Mensaje"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:hint="Nombre"
+            android:layout_gravity="center_horizontal"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/etCorreo"
+            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:hint="Correo"
+            android:layout_gravity="center_horizontal"
+            android:inputType="textEmailAddress"/>
+        <EditText
+            android:id="@+id/etMensaje"
+            android:layout_height="200dp"
+            android:layout_width="350dp"
+            android:hint="Mensaje"
+            android:layout_gravity="center_horizontal"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Enviar Comentario"
+            android:theme="@style/MiBotonRaised"
+            android:layout_below="@+id/etDescripcion"
+            android:onClick="SendMensaje"/>
+        <!--"EnviarMensaje" , poner credenciales y
+                                darse acceso a terceros -->
+        <!--"SendMensaje" abre el gmail por defecto -->
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.pentagram;
+package com.example.pentagram.pojo;
 
 public class Mascota {
     private String nombre;

@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/estrella"
+        android:id="@+id/iestrella"
         android:icon="@drawable/star"
         android:menuCategory="container"
         android:title="Estrella"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_favorite"
+        android:id="@+id/icontacto"
         android:icon="@drawable/star"
         android:title="Contacto"
         android:orderInCategory="100"/>
 
     <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/action_settings"
+    <item android:id="@+id/iacercade"
         android:title="Acerca de"
         android:orderInCategory="101"/>
 

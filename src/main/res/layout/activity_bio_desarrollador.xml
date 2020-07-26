@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BioDesarrollador">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <include android:id="@+id/miActionBar"
+            layout="@layout/actionbar"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_marginTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNombreBio"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:textSize="35dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gianfranco Cumpa L."/>
+        <TextView
+            android:id="@+id/tvCargoBio"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:textSize="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Developer Junior."/>
+        <TextView
+            android:id="@+id/tvCorreoBio"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="giannfcl@gmail.com"/>
+        <TextView
+            android:id="@+id/tvFecha"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:textSize="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha Desarrollo : 25-07-2020"/>
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

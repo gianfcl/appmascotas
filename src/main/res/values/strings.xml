@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Mascotas</string>
     <string name="app_favoritos">Mascotas Favoritas</string>
+    <string name="app_contacto">Contacto</string>
+    <string name="app_biodesarrollador">Bio Desarrollador</string>
     <string name="texto_boton_click">Click</string>
     <string name="texto_titulo">Hello World!</string>
     <string name="mensaje">Favorito :)</string>
@@ -14,4 +16,6 @@
     </string-array>
     <string name="titulo_tarjeta">Android 5.0</string>
     <string name="descripcion_tarjeta">Esta es la version en la que se incluye material design Android Lollipop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

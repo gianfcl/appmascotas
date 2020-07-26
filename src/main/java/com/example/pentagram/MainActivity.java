@@ -2,73 +2,65 @@ package com.example.pentagram;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.pentagram.adapter.MascotaAdaptador;
+import com.example.pentagram.adapter.PageAdapter;
+import com.example.pentagram.fragment.PerfilFragment;
+import com.example.pentagram.fragment.RecyclerViewFragment;
+import com.example.pentagram.pojo.contacto;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    //SwipeRefreshLayout sfiMiIndicadorRefresh;
-    //ListView lstMiLista;
-    //Adapter adaptador;
-    ArrayList<Mascota> mascotas;
-    private RecyclerView listaMascotas;
+
+    private Toolbar miActionBar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
-        setSupportActionBar(miActionBar);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.paw_dog);
-            getSupportActionBar().setTitle(R.string.app_name);
+        miActionBar = (Toolbar) findViewById(R.id.miActionBar);
+        tabLayout = (TabLayout) findViewById(R.id.tableLayout);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        if (miActionBar!=null){
+            setSupportActionBar(miActionBar);
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setHomeAsUpIndicator(R.drawable.paw_dog);
+                getSupportActionBar().setTitle(R.string.app_name);
+            }
         }
-
-        listaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
-        listaMascotas.setHasFixedSize(true);
-
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-
-        listaMascotas.setLayoutManager(llm);
-        LlenarMascotas();
-        iniAdaptador();
+        setupViewPager();
     }
 
-    private void iniAdaptador() {
-        MascotaAdaptador adapt = new MascotaAdaptador(mascotas,this);
-        listaMascotas.setAdapter(adapt);
+    private ArrayList<Fragment> agregandoFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new RecyclerViewFragment());
+        fragments.add(new PerfilFragment());
+        return fragments;
     }
 
-    public void LlenarMascotas(){
-        mascotas = new ArrayList<Mascota>();
+    private void setupViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregandoFragments()));
+        tabLayout.setupWithViewPager(viewPager);
 
-        mascotas.add(new Mascota("Filurais",R.drawable.loro,4));
-        mascotas.add(new Mascota("Filurais",R.drawable.hamster,1));
-        mascotas.add(new Mascota("Filurais",R.drawable.canario,2));
-        mascotas.add(new Mascota("Bunny",R.drawable.mascota3,5));
-        mascotas.add(new Mascota("Filurais",R.drawable.mascota1,2));
-        mascotas.add(new Mascota("Tom",R.drawable.mascota2,3));
+        tabLayout.getTabAt(0).setIcon(R.drawable.home50);
+        tabLayout.getTabAt(1).setIcon(R.drawable.jake50);
     }
 
     @Override
@@ -81,10 +73,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId ()){
-            case R.id.estrella:
+            case R.id.iestrella:
                 //Toast.makeText ( this,"ranquet",Toast.LENGTH_SHORT ).show ();
                 Intent intent = new Intent(this, Mascotasfavoritos.class);
                 this.startActivity(intent);
+                break;
+            case R.id.icontacto:
+                //Toast.makeText ( this,"ranquet",Toast.LENGTH_SHORT ).show ();
+                Intent intent1 = new Intent(this, contacto.class);
+                this.startActivity(intent1);
+                break;
+            case R.id.iacercade:
+                //Toast.makeText ( this,"ranquet",Toast.LENGTH_SHORT ).show ();
+                Intent intent2 = new Intent(this, BioDesarrollador.class);
+                this.startActivity(intent2);
                 break;
             default:
                 return super.onOptionsItemSelected ( item );
