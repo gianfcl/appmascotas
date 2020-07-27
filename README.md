@@ -1,4 +1,4 @@
-# pentagram_semana3
+# pentagram_semana4
 semana4
 #Uso de Fragment,ViewPager,AppBar
 <img src="src/main/res/images-semana4/part1.PNG" width="500" height="400">  <img src="src/main/res/images-semana4/part2.PNG" width="500" height="400">
