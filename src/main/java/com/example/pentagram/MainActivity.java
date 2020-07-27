@@ -3,7 +3,6 @@ package com.example.pentagram;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -11,11 +10,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.example.pentagram.adapter.MascotaAdaptador;
 import com.example.pentagram.adapter.PageAdapter;
-import com.example.pentagram.fragment.PerfilFragment;
+import com.example.pentagram.fragment.PerfilMascotaFragment;
 import com.example.pentagram.fragment.RecyclerViewFragment;
 import com.example.pentagram.pojo.contacto;
 import com.google.android.material.tabs.TabLayout;
@@ -51,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Fragment> agregandoFragments(){
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new RecyclerViewFragment());
-        fragments.add(new PerfilFragment());
+        fragments.add(new PerfilMascotaFragment());
         return fragments;
     }
 
