@@ -10,7 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pentagram.pojo.Mascota;
+import com.example.pentagram.model.ConstructorMascotas;
+import com.example.pentagram.model.Mascota;
 import com.example.pentagram.R;
 
 import java.util.ArrayList;
@@ -41,12 +42,14 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         mascotaViewHolder.hwhite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //mascotaViewHolder.like.setText(Integer.toString(mascota.getLike()+1));
-                //Toast.makeText(activity,Integer.toString(mascota.getLike()+1), Toast.LENGTH_LONG).show();
-                mascotas.get(position).setLike(mascotas.get(position).getLike()+1);
-                mascotaViewHolder.like.setText(Integer.toString(mascota.getLike()));
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.darLikeMascota(mascota);
+                mascotaViewHolder.like.setText(Integer.toString(constructorMascotas.obtenerLikesMascota(mascota)));
             }
         });
+        ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+        mascotaViewHolder.like.setText(Integer.toString(constructorMascotas.obtenerLikesMascota(mascota)));
+
     }
 
     @Override
@@ -60,7 +63,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         private ImageView foto;
         private TextView like;
         private ImageView hwhite;
-        private ImageView hyellow;
+        //private ImageView hyellow;
 
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -68,7 +71,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             foto = (ImageView) itemView.findViewById(R.id.imgFot);
             like = (TextView) itemView.findViewById(R.id.tvCont);
             hwhite = (ImageView) itemView.findViewById(R.id.imgBone1);
-            hyellow = (ImageView) itemView.findViewById(R.id.imgBone2);
+            //hyellow = (ImageView) itemView.findViewById(R.id.imgBone2);
         }
     }
 }

@@ -11,7 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pentagram.R;
-import com.example.pentagram.pojo.Mascota;
+import com.example.pentagram.model.ConstructorMascotas;
+import com.example.pentagram.model.ConstructorMisFotosMascota;
+import com.example.pentagram.model.Mascota;
 
 import java.util.ArrayList;
 

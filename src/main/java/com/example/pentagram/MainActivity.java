@@ -12,9 +12,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.pentagram.adapter.PageAdapter;
-import com.example.pentagram.fragment.PerfilMascotaFragment;
-import com.example.pentagram.fragment.RecyclerViewFragment;
-import com.example.pentagram.pojo.contacto;
+import com.example.pentagram.fragment.mimascota.PerfilMiMascotaFragment;
+import com.example.pentagram.fragment.mascotas.RecyclerViewFragment;
+import com.example.pentagram.model.CorreoContacto;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Fragment> agregandoFragments(){
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new RecyclerViewFragment());
-        fragments.add(new PerfilMascotaFragment());
+        fragments.add(new PerfilMiMascotaFragment());
         return fragments;
     }
 
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.icontacto:
                 //Toast.makeText ( this,"ranquet",Toast.LENGTH_SHORT ).show ();
-                Intent intent1 = new Intent(this, contacto.class);
+                Intent intent1 = new Intent(this, CorreoContacto.class);
                 this.startActivity(intent1);
                 break;
             case R.id.iacercade:

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:padding="6dp"
+    card_view:cardCornerRadius="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imgFotoTop"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:src="@drawable/lollipop"
+            android:scaleType="centerCrop"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:id="@+id/tvNomTop"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="mascota"/>
+            <TextView
+                android:id="@+id/tvContTop"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="0"
+                android:layout_marginLeft="100dp"/>
+
+            <ImageView
+                android:id="@+id/imgBone2Top"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/bone_yellow"
+                android:layout_marginLeft="150dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

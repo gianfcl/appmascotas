@@ -1,6 +1,7 @@
-package com.example.pentagram.pojo;
+package com.example.pentagram.model;
 
 public class Mascota {
+    private int id;
     private String nombre;
     private int foto;
     private int like;
@@ -9,6 +10,10 @@ public class Mascota {
         this.nombre = nombre;
         this.foto = foto;
         this.like = like;
+    }
+
+    public Mascota() {
+
     }
 
     public String getNombre() {
@@ -33,5 +38,13 @@ public class Mascota {
 
     public void setLike(int like) {
         this.like = like;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

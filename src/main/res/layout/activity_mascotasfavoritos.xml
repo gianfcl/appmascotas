@@ -16,4 +16,19 @@
             layout="@layout/actionbar"/>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/miActionBar"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopMascotas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

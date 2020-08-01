@@ -1,4 +1,4 @@
-package com.example.pentagram.pojo;
+package com.example.pentagram.model;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -29,7 +29,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class contacto extends AppCompatActivity {
+public class CorreoContacto extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class contacto extends AppCompatActivity {
 
             //Darse permiso por gmail para enviar y poner credenciales
             final String correo = "";
-            final String clave = " ";
+            final String clave  = "";
             public void onClick(View v) {
                 Properties props = new Properties();
                 props.put("mail.smtp.host", "smtp.googlemail.com");
@@ -109,7 +109,7 @@ public class contacto extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressDialog = ProgressDialog.show(contacto.this,"Por favor Espere","Enviando Esto",true,false);
+            progressDialog = ProgressDialog.show(CorreoContacto.this,"Por favor Espere","Enviando Esto",true,false);
         }
 
         @Override
@@ -129,7 +129,7 @@ public class contacto extends AppCompatActivity {
             progressDialog.dismiss();
             if (s.equals("EXITO")){
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(contacto.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(CorreoContacto.this);
                 builder.setCancelable(false);
                 builder.setTitle(Html.fromHtml("<font color='#509324'>Exito</font>"));
                 builder.setMessage("Mensaje enviado");
@@ -141,7 +141,7 @@ public class contacto extends AppCompatActivity {
                 });
                 builder.show();
             }else{
-                Toast.makeText (contacto.this,"Algo salio  mal",Toast.LENGTH_SHORT ).show ();
+                Toast.makeText (CorreoContacto.this,"Algo salio  mal",Toast.LENGTH_SHORT ).show ();
             }
         }
     }

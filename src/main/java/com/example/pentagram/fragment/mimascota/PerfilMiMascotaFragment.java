@@ -1,4 +1,4 @@
-package com.example.pentagram.fragment;
+package com.example.pentagram.fragment.mimascota;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,44 +12,45 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pentagram.R;
-import com.example.pentagram.pojo.Mascota;
+import com.example.pentagram.model.Mascota;
 import com.example.pentagram.adapter.MiMascotAdaptor;
+import com.example.pentagram.presentador.mimascota.PerfilMiMascotaRVFragmentPresenter;
+import com.example.pentagram.presentador.mimascota.iPerfilMiMascotaRVFragmentPresenter;
 
 import java.util.ArrayList;
 
-public class PerfilMascotaFragment extends Fragment {
+public class PerfilMiMascotaFragment extends Fragment implements iPerfilMiMascotaFragmentView {
+
 
     ArrayList<Mascota> mimascotafotos;
     private RecyclerView listaFotosMiMascota;
+    private iPerfilMiMascotaRVFragmentPresenter presenter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_perfil,container,false);
         listaFotosMiMascota = (RecyclerView) v.findViewById(R.id.rvFotos);
-        listaFotosMiMascota.setHasFixedSize(true);
-
-        GridLayoutManager glm = new GridLayoutManager(getActivity(),3);
-        glm.setOrientation(GridLayoutManager.VERTICAL);
-
-        listaFotosMiMascota.setLayoutManager(glm);
-        LlenarMascotas2();
-        iniAdaptador2();
+        //listaFotosMiMascota.setHasFixedSize(true);
+        presenter = new PerfilMiMascotaRVFragmentPresenter(this,getContext());
         return v;
     }
 
-    private void iniAdaptador2() {
-        MiMascotAdaptor adapt = new MiMascotAdaptor(mimascotafotos,getActivity());
-        listaFotosMiMascota.setAdapter(adapt);
+    @Override
+    public void generarGridLayout() {
+        GridLayoutManager glm = new GridLayoutManager(getActivity(),3);
+        glm.setOrientation(GridLayoutManager.VERTICAL);
+        listaFotosMiMascota.setLayoutManager(glm);
     }
 
-    public void LlenarMascotas2(){
-        mimascotafotos = new ArrayList<Mascota>();
+    @Override
+    public MiMascotAdaptor crearAdaptadorMM(ArrayList<Mascota> mimascotafotos) {
+        MiMascotAdaptor adapt = new MiMascotAdaptor(mimascotafotos,getActivity());
+        return adapt;
+    }
 
-        mimascotafotos.add(new Mascota("Filurais",R.drawable.mascota1,4));
-        mimascotafotos.add(new Mascota("Filurais",R.drawable.mascota1,1));
-        mimascotafotos.add(new Mascota("Filurais",R.drawable.mascota1,2));
-        mimascotafotos.add(new Mascota("Filurais",R.drawable.mascota1,5));
-        mimascotafotos.add(new Mascota("Filurais",R.drawable.mascota1,2));
-        mimascotafotos.add(new Mascota("Filurais",R.drawable.mascota1,3));
+    @Override
+    public void inicializarAdaptadorMMRV(MiMascotAdaptor adapt) {
+        listaFotosMiMascota.setAdapter(adapt);
     }
 }

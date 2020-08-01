@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvMascota"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="20dp"
+    android:padding="6dp"
     card_view:cardCornerRadius="4dp">
     <GridLayout
         android:layout_width="match_parent"
@@ -20,31 +22,33 @@
             android:scaleType="centerCrop"
             android:layout_columnSpan="4"/>
 
-
         <ImageView
             android:id="@+id/imgBone1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="asd"
-            android:src="@drawable/bone"/>
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bone"
+            android:layout_gravity="center_vertical"/>
         <TextView
             android:id="@+id/tvNom"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:paddingLeft="20dp"
             android:text="nombre"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center|center_vertical"/>
         <TextView
             android:id="@+id/tvCont"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="0"
-            android:layout_gravity="right|center"/>
+            android:layout_gravity="right|center_vertical"
+            android:paddingRight="20dp"/>
 
         <ImageView
             android:id="@+id/imgBone2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/bone_yellow"/>
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bone_yellow"
+            android:layout_gravity="center_vertical"/>
     </GridLayout>
 
 </androidx.cardview.widget.CardView>

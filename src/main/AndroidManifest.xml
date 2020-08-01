@@ -30,7 +30,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".pojo.contacto"
+            android:name=".model.CorreoContacto"
             android:label="@string/app_contacto"
             android:parentActivityName=".MainActivity">
             <meta-data
