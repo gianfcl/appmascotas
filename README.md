@@ -1,14 +1,8 @@
-# pentagram_semana4
-semana4
-#Uso de Fragment,ViewPager,AppBar<br>
-<img src="src/main/res/images-semana4/part1.PNG" width="500" height="400">  <img src="src/main/res/images-semana4/part2.PNG" width="500" height="400">
-
-<img src="src/main/res/images-semana4/part3.PNG" width="500" height="400">
-
-#Envio correo Forma 1 uso JavaMail (Requiere permiso de uso a terceros gmail ) <br>
-<img src="src/main/res/images-semana4/part6.png" width="250" height="500">  <img src="src/main/res/images-semana4/part7.png" width="250" height="500">
-
-
-#Envio correo Forma 2 uso Intents Email <br>
-<img src="src/main/res/images-semana4/part4.PNG" width="500" height="400">
-<img src="src/main/res/images-semana4/part5.PNG" width="500" height="400"> 
+# pentagram_semana5
+semana5
+#Uso de MVP en todas las vistas de las mascotas (todas las mascotas, fotos de mis mascota por dia, fotos top del dia)<br>
+#Uso de Interfaces para los adaptadores y ViewPager<br>
+<img src="src/main/res/images-semana5/modelo.png" width="500" height="400">  <img src="src/main/res/images-semana5/codigoBD.png" width="500" height="400">
+<img src="src/main/res/images-semana5/constantesBD.png" width="500" height="400"> <img src="src/main/res/images-semana5/perfilfotosmimascota.png" width="500" height="400">
+<img src="src/main/res/images-semana5/mascotas.png" width="250" height="500">  <img src="src/main/res/images-semana5/fotosmimascota.png" width="250" height="500">
+<img src="src/main/res/images-semana5/topmascotas.png" width="250" height="500">  <img src="src/main/res/images-semana5/correo.png" width="250" height="500">
