@@ -77,9 +77,10 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
 
     public void insertarMascota(ContentValues contentValues){
-        //SQLiteDatabase db = this.getWritableDatabase();
-        //db.insert(ConstantesBaseDatos.TABLE_MASCOTA,null, contentValues);
-        //db.close();
+        //Ejecutar una vez, luego comentar los 3 campos para no mostrar repetidos
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(ConstantesBaseDatos.TABLE_MASCOTA,null, contentValues);
+        db.close();
     }
 
 
